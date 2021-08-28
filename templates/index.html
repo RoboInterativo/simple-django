@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 Hello
+{% for item in food %}
+<p>Price: {{ item.price}}</p>
+<p>Name: {{ item.name}}</p>
+<p>date: {{ item.prod_date}}</p>
+{% endfor %}
+
 {% endblock %}
