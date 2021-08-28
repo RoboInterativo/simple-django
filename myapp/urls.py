@@ -13,11 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-
-from django.urls import path,include
-
+from django.conf.urls import url,include
+from django.urls import  path,re_path
+from . import views
+from fsspbotdb.views import  *
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path ('', include('myapp.urls')),
+    path("", views.index, name='index'),
+    #path("set_webhook", views.set_webhook, name='set_webhook'),
+    #path("HOOK-SyBPwfCLPl30", views.webhook, name='webhook'),
+    #path("<slug:slug>", views.webhook, name='webhook'),
+    #123
+
+
 ]
